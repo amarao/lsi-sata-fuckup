@@ -1,0 +1,9 @@
+echo --security-set-pass
+hdparm --user-master u --security-set-pass 123 $1
+sleep 1
+echo --security-erase
+hdparm --user-master u --security-erase 123 $1 &
+sleep 1
+echo --security-set-pass
+hdparm --user-master u --security-set-pass 123 $1 &
+
