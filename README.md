@@ -1,17 +1,24 @@
 lsi-sata-fuckup
 ===============
 
-Demo script to hang LSI-based SAS HBA with SATA-drives.
+Demo script to prove unstability of LSI-based SAS HBA with SATA-drives in enclosures.
+
+Preconditions:
+1) Use SAS expander (enclosure)
+2) Use SAS HBA
+3) Use SATA HDD (not SSD)
+
 
 Usage:
 
-1) Set up LSI (f.e. Falcon 2008) HBA with SATA drives.
-2) run lsi-sata-fuckup /dev/sdc.
-3) Got all drives, attached to LSI HBA hanged.
+1) Select two disks attached to same SAS-host (port in HBA), for example two drives in same expander.
+2) Run script against one disk (lsi-sata-fuckup /dev/sdx)
+3) Check if /dev/sdy is available (hint: it is not, like all other disks one the same SAS-host) 
 
 WARNING: 
-100% cause problems with host uptime, 
-100% kill all data on victim drive (/dev/sdc).
+Cause problems with host stability. Never use in production or without ability to reboot host freely.
+
+100% kills all data on selected drive.
 
 USE ON PWN RISK.
 
