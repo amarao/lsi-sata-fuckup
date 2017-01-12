@@ -14,7 +14,7 @@ Usage:
 
 - Select two disks attached to same SAS-host (port in HBA), for example two drives in same expander (/dev/sdx, /dev/sdy)
 - Run script against one disk (`lsi-sata-fuckup /dev/sdx`)
-- Check if /dev/sdy is available (please note: you may have sata disks, attached to motherboard's SATA-HBA, they will continue to work, only SAS-attached driver will be affected).
+- Check if /dev/sdy is available (please note: you may have sata disks, attached to motherboard's SATA-HBA, they will continue to work, only SAS-attached driver will be affected). Example: `dd if=/dev/sdy of=/dev/null bs=1k count=1`
 
 WARNING
 -------
